@@ -1,6 +1,8 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is one pager project.
+It is my first mini project with react.
 
 ## Available Scripts
 
