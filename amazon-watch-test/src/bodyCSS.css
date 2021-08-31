@@ -1,0 +1,129 @@
+.MainBodyCSS {
+    background-color: white;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+.panels {
+    margin: 10px;
+    padding: 25px;
+    width: 45%;
+    min-height: 80vh;
+    box-sizing: border-box;
+    box-shadow: 0px 2px 5px 0px #f0e8e8;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    text-align: center;
+    justify-content: center;
+}
+/* WATCH IMAGE WORK */
+.watchImage {
+    position: relative;
+}
+.wathcAbsoImg {
+    position: absolute;
+    z-index: 2;
+    top: 48%;
+    left: 50%;
+    width: 80px;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 6px #76f1f7;
+    transform: translate(-50%, -50%);
+    animation: blinks 2s 10;
+}
+@keyframes blinks {
+    0% {
+        color: white;
+    }
+    50% {
+        text-shadow: none;
+        color: transparent;
+    }
+    100% {
+        text-shadow: 1px 1px 6px #76f1f7;
+        color: white;
+    }
+}
+.wathcAbsoImg > img {
+    width: 100%;
+}
+/* WATCH DYNAMIC WORK */
+.panels > .watchDataCss {
+    width: 100%;
+    text-align: start;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+.panels > .watchDataCss > div {
+    text-align: start;
+    margin: 5px;
+}
+.dotParent > img {
+    margin: 6px 9px 4px 9px;
+}
+.dot {
+    height: 50px;
+    width: auto;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+.dot:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 8px #90f1fb;
+}
+.dot:nth-child(1) {
+    background-color: rgb(66, 66, 66);
+}
+.dot:nth-child(2) {
+    background-color: rgb(250, 51, 51);
+}
+.dot:nth-child(3) {
+    background-color: rgb(84, 84, 252);
+}
+.dot:nth-child(4) {
+    background-color: rgb(231, 46, 231);
+}
+.selectedProductIcon {
+    /* transform: scale(1.2); */
+    box-shadow: 0px 0px 8px #90f1fb;
+    border: 2px solid rgb(82, 255, 47);
+}
+
+.btn {
+    outline: none;
+    background-color: aliceblue;
+    border: none;
+    margin: 0 10px 0 10px;
+    padding: 5px 13px;
+    border-radius: 4.5px;
+}
+.btn:hover {
+    background-color: rgb(116 171 219);
+    box-shadow: 1px 1px 3px blue;
+}
+.selectedFeatureBtn {
+    background-color: rgb(116 171 219);
+    box-shadow: 1px 1px 3px blue;
+}
+.buyNow {
+    padding: 8px 15px;
+    width: 100%;
+}
+.buyNow:hover {
+    background-color: rgb(0, 255, 102);
+    box-shadow: 1px 1px 3px rgb(0, 255, 102);
+}
