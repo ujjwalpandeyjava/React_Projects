@@ -1,0 +1,9 @@
+Google All about react components.
+https://medium.com/wesionary-team/types-of-react-components-you-should-know-251cceacd8ac
+
+When uploading to git must ignore node-module folder.
+and, after cloning to system first run comand 'npm install' to load all the node-modules
+
+
+
+Before starting any app use "npm install"
