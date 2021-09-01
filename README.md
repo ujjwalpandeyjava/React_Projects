@@ -2,7 +2,7 @@
 
 ## Many Projects.
 This directory contains many project.\
-A details about these project is given below.
+A litle detail about these projects are given below.
 
 # 1. Amazon Watch
 This is my first project with **ReactJs**.\
@@ -15,4 +15,13 @@ This is my first project with **ReactJs**.\
 2. The watch image changes on the click of right image preview icons.
 3. The Funcnality on the watch changes on click of buttons just below it. 
 
-# 2. Contact manager (normal)
+# 2. Contact manager (Basics)
+This is a contact managing app.
+Contining funcnlaties are:\
+1. Add contact
+2. Delete contact
+3. View contacts\
+*This app have no routing, to see routing in the contact manafin*
+
+# 3. Firse React app
+
