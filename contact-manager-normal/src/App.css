@@ -1,0 +1,27 @@
+/*    Fonts 
+font-family: 'Fuggles', cursive;
+font-family: 'Mukta', sans-serif;
+font-family: 'Varela Round', sans-serif;
+font-family: 'Yomogi', cursive;
+font-family: 'Varela Round', sans-serif;
+font-family: 'Lato', sans-serif;
+*/
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fuggles&family=Mukta:wght@400&family=Varela+Round&family=Yomogi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+.center {
+  text-align: center;
+}
+.upperCase {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.left {
+  justify-content: start;
+  text-align: start;
+}
+.displayNone {
+  display: none;
+}

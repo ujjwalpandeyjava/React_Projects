@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --imgDimension: 70px;
+}
+
+.perContact {
+    display: flex;
+    background-color: bisque;
+    background-color: #cdf0ea;
+    border-radius: 3px;
+    padding: 8px 10px;
+    margin: 10px 40px;
+}
+
+.perContact > div {
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.imageDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 90px;
+    max-width: 90px;
+    overflow: -moz-hidden-unscrollable;
+}
+
+.details {
+    margin: 2px 2px 2px 12px;
+    width: 100%;
+    position: relative;
+}
+
+.imageDiv > div {
+    font-size: 1.3rem;
+    font-weight: bolder;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    border-radius: 50%;
+    background-color: #f7e4f2;
+    box-shadow: 0 0 2px #e9b0da;
+    padding: 16px;
+}
+.trashtray {
+    position: absolute;
+    cursor: pointer;
+    height: 40px;
+    top: 20px;
+    right: 10px;
+    color: #818181;
+}
+.fa-trash-alt{
+    margin-right: 6px;
+}
+.fa-trash-alt:hover {
+    color: red;
+}
+
+.fa-edit:hover {
+    color: blue;
+}
