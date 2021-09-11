@@ -67,6 +67,7 @@ export default function App() {
     console.log('new contact list ', contact, 'new contact adding: ', newContactDetails);
     setNextId(nextId + 1)
   }
+
   const removeContact = (id) => {
     const newContactList = contact.filter((contact) => { return contact.id != id; });
     setContact(newContactList)
@@ -76,7 +77,8 @@ export default function App() {
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contact))
   }, [contact]);
-  //Getting the data
+
+  //Getting the data from local storage
   useEffect(() => {
     const retrieveContact = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (retrieveContact) setContact(retrieveContact);
