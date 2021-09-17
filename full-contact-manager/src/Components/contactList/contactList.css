@@ -1,0 +1,15 @@
+.contactList{
+    padding: 13px;
+}
+.eachContact{
+    position: relative;
+}
+.deleteIcon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgb(241, 104, 104);
+}
+.deleteIcon:hover{
+    color: red;
+}

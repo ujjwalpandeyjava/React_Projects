@@ -1,0 +1,23 @@
+:root {
+  --nar: 78px;
+  font-size: 15px;
+}
+*{
+  padding: 0;
+  /* margin: 0px; */
+  box-sizing: border-box;
+}
+
+.center {
+  text-align: center;
+}
+.left {
+  text-align: start;
+}
+.right {
+  text-align: end;
+}
+
+.fulDetails{
+  margin: 13px;
+}

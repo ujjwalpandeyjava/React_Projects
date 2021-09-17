@@ -1,0 +1,403 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+/* font-family: 'Rubik', sans-serif; */
+
+:root {
+    --fontSize10: 10px;
+    --fontSize12: 12px;
+    --fontSize15: 15px;
+    --fontSize20: 20px;
+    --fontSize25: 25px;
+    --fontSize30: 30px;
+    --fontSize35: 35px;
+    --fontSize40: 40px;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+.icon > span > a:link,
+.icon > span > a:visited,
+.icon > span > a:hover,
+.icon > span > a:active {
+    color: white;
+}
+div {
+    color: white;
+    padding: 12px;
+}
+body {
+    background: black;
+    font-family: "Rubik", sans-serif;
+    font-weight: 700;
+    width: 100%;
+    position: relative;
+}
+/* Navbar starts */
+.navbar {
+    color: white;
+    padding: 15px 25px;
+    top: 0;
+    background-color: black;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    z-index: 30;
+    box-shadow: 0 1px 5px 0px #ffffff36;
+}
+.navbar > h1 {
+    cursor: pointer;
+}
+.navbar > .hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+.navbar > div {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.navbar > div > h3 {
+    padding: 3px 12px;
+    cursor: pointer;
+}
+.navbar > div > h3:hover {
+    color: #f38332;
+    background-color: #141414f0;
+}
+/* Navbar ends */
+
+.main {
+    width: 100%;
+}
+.firstView {
+    width: 100%;
+    min-height: 96vh;
+    height: 96vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* for scroll Down action */
+    position: relative;
+}
+.firstView > div {
+    /* min-width: 440px; */
+    width: 49%;
+    padding: 12px;
+    /* border: 2px solid white; */
+}
+.whoIAm {
+    display: flex;
+    /* min-width: 480px !important; */
+    flex-direction: column;
+    font-size: 30px;
+    text-transform: uppercase;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    position: relative;
+}
+#myAvatar {
+    padding: 0;
+    position: absolute;
+    top: 26%;
+    /* right: 32%; */
+    right: 22%;
+    transform: rotate(-13deg) translate(50%, 10px);
+    width: 180px;
+    height: 210px;
+    /* border: 1px solid #ff8918; */
+    overflow: hidden;
+    border-radius: 26% 88px 0px;
+}
+#myAvatar > img {
+    width: 100%;
+    height: auto;
+}
+.name {
+    color: #e7e4df;
+    background-color: black;
+    /* background-color: #343f4f; */
+}
+.wrapper {
+    display: inline-flex;
+}
+.wrapper .static-txt {
+    color: #fff;
+    padding: 0;
+    font-size: 28px;
+    display: block;
+    font-weight: 400px;
+}
+.wrapper .dynamic-txts {
+    height: 30px;
+    line-height: 31px;
+    overflow: hidden;
+    justify-content: center;
+    margin-left: 7px;
+    margin-top: 1px;
+    z-index: -1;
+}
+.dynamic-txts li {
+    color: #fa5151;
+    list-style: none;
+    font-size: 25px;
+    font-weight: 500px;
+    position: relative;
+    top: 0;
+    animation: slide 9.6s steps(4) infinite;
+}
+.whoIamPic {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.whoIamPic > div {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-content: center;
+    /* box-shadow: inset 0 0 7px 5px #343f4f; */
+}
+.whoIamPic > div > img {
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    filter: grayscale(100%) brightness(70%);
+    box-shadow: 0 0 0 0 black;
+    z-index: -1;
+}
+@keyframes slide {
+    100% {
+        top: -120px;
+    }
+}
+.dynamic-txts li span {
+    position: relative;
+    height: 30px;
+}
+.dynamic-txts li span::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-left: 2px solid #fc6d6d;
+    left: 0;
+    /* background-color: #343f4f; */
+    background-color: black;
+    /* animation: typing 2s steps(14) infinite; */
+    animation: typing 1.2s steps(14) infinite alternate;
+}
+@keyframes typing {
+    100% {
+        left: 100%;
+        margin: 0 -35px 0 35px;
+    }
+}
+
+@media (max-width: 970px) {
+    .firstView {
+        flex-direction: column;
+        min-height: 90vh;
+    }
+    .firstView > div {
+        height: 50%;
+        width: 100%;
+    }
+    .firstView > div:last-child {
+        height: 45%;
+    }
+    .whoIAm {
+        justify-content: flex-end;
+    }
+    .whoIamPic > div > img {
+        box-shadow: 1px 1px 20px 0 white;
+        border-radius: 10px;
+    }
+    #myAvatar {
+        top: 27%;
+        right: 22%;
+    }
+}
+@media (max-width: 800px) {
+    .navbar > .menus {
+        display: none;
+    }
+    .navbar > .hamburger {
+        color: white;
+        display: flex;
+        padding: 3px 12px;
+        background-color: #141414f0;
+        align-items: center;
+    }
+}
+@media (max-width: 560px) {
+    #myAvatar {
+        top: 35%;
+        right: 18%;
+        width: 135px;
+    }
+}
+@media (max-width: 400px) {
+    .navbar > h1 {
+        font-size: x-large;
+    }
+}
+/* Social Icons start*/
+.socialIcons {
+    margin-top: 20px;
+    margin-left: 70px;
+    display: inline-flex;
+}
+.socialIcons .icon {
+    margin: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+.socialIcons .icon span {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    display: block;
+    /* background: black; */
+    text-align: center;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+.socialIcons .icon span i {
+    font-size: 15px;
+    line-height: 20px;
+    padding: 0;
+}
+.socialIcons .icon .tooltip {
+    position: absolute;
+    top: 0px;
+    background: #0f1124;
+    font-size: 10px;
+    padding: 9px 18px 12px;
+    border-radius: 25px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.socialIcons .icon:hover .tooltip {
+    top: -20px;
+    opacity: 1;
+    pointer-events: all;
+}
+.socialIcons .icon .tooltip::before {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: #0f1124;
+    bottom: -8px;
+    left: 50%;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: translateX(-50%) rotate(45deg);
+}
+.socialIcons .icon:hover span,
+.socialIcons .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(255, 255, 255, 0.4);
+}
+/* Social Icons ends*/
+
+/* Scroller starts*/
+#scroller {
+    /* border: 1px solid white; */
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    font-size: 0.75rem;
+    cursor: context-menu;
+}
+#scroller > div {
+    text-align: center;
+    font-size: x-large;
+    border: 1px solid white;
+    border-radius: 17px;
+    box-shadow: inset 1px 1px 2px 0 #e1dfdf, inset -1px -1px 2px 0 #c1b9b9;
+    width: 15px;
+    height: 35px;
+    padding: 0;
+    text-align: center;
+    animation: scrolldot 2.5s linear infinite;
+    margin-top: 6px;
+    cursor: context-menu;
+}
+#scroller > div > span {
+    animation: scrolldot2 2.5s linear infinite;
+    box-shadow: 0 0 10px 3px black;
+    border-radius: 20px;
+    cursor: context-menu;
+}
+@keyframes scrolldot {
+    0% {
+        padding-top: 0px;
+    }
+    45% {
+        padding-top: 12px;
+    }
+    65%,
+    100% {
+        padding-top: 15px;
+    }
+}
+@keyframes scrolldot2 {
+    0% {
+        opacity: 1;
+    }
+    45% {
+        opacity: 0;
+    }
+    75%,
+    99% {
+        opacity: 0;
+    }
+}
+/* Scroller starts ends*/
+
+/* Page Scrollbar starts*/
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: black;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #494848;
+    box-shadow: inset 1px 1px 1px 0 #8f8d8d, inset -1px -1px 1px 0 #000000;
+    border-radius: 5px;
+}
+/* Page Scrollbar ends */
