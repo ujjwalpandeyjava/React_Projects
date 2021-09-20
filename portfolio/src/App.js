@@ -1,31 +1,32 @@
 import React, { Fragment, useState } from 'react'
 import floatingImage from './images/ujjwalAvatar1Copy.png'
 import aboutImage from './images/ujjwalAvatar3.png'
+import educationPic from './images/ujjwalAvatarEducation.png'
+import contactPic from './images/contact.png'
+import projectsPic from './images/projectPic.png'
+import UjjwalResume from './Ujjwal_Resume.pdf'
 import myPicture from './images/IMG-20210325-WA0006.jpg'
 import './App.css';
+import Frag from './frag';
 
 function App() {
-
   let [scrollerDisplaying, setScrollerDisplaying] = useState("flex")  // "flex"/"none"
   let scrollerDisplayingWhat = { "display": scrollerDisplaying };
-
   const colorOrangeRed = { "color": "orangered" };
-
-  //  Hiding the scroller more indicator when page scrolled 80px
   window.onscroll = function () {
+    //  Hiding the scroller more indicator when page scrolled 80px
     var currentScrollPos = window.pageYOffset;
     // console.log('Screen scrolled and the current scroll pos is = ' + currentScrollPos);
-    if (currentScrollPos > 80 && scrollerDisplaying === "flex") {
+    if (currentScrollPos > 120 && scrollerDisplaying === "flex") {
       // console.warn('changed to none');
       setScrollerDisplaying("none")
     }
-    else if (currentScrollPos < 80 && scrollerDisplaying === "none") {
+    else if (currentScrollPos < 120 && scrollerDisplaying === "none") {
       // console.warn('changed to flex');
       setScrollerDisplaying("flex")
     }
   }
-
-  const socialIcons =
+  const socialIcons = <Fragment>
     <div className="socialIcons">
       <div className="icon">
         <div className="tooltip">Facebook</div>
@@ -48,21 +49,22 @@ function App() {
         <span><a href="https://ujjwalpandeyjava.github.io/Links/" target="_blank" rel="noreferrer"><i className="fab fa-github"></i></a></span>
       </div>
     </div>
+  </Fragment>
   const navbar = <Fragment>
     <div className="navbar" id="navbar">
       <h1>IAM<span style={colorOrangeRed}>UJJWALPANDEY</span></h1>
       <div className="hamburger"><i className="fas fa-bars"></i></div>
       <div className="menus">
-        <h3>Home</h3>
-        <h3>About</h3>
-        <h3>Education</h3>
-        <h3>Work</h3>
-        <h3>Contact</h3>
+        <h3> <a href="#firstView">Home</a></h3>
+        <h3><a href="#aboutSection">About</a></h3>
+        <h3><a href="#educationSection">Education</a></h3>
+        <h3><a href="#workExamplesSection">Work</a></h3>
+        <h3><a href="#contactMeSection">Contact</a></h3>
       </div>
     </div>
   </Fragment>
   const firstView = <Fragment>
-    <div className="firstView">
+    <div className="firstView" id="firstView">
       <div className="whoIAm">
         <div className="name">Who I AM?
         </div>
@@ -93,45 +95,109 @@ function App() {
     <div id="aboutSection">
       <h1>About me</h1>
       <div id="firstInAbout">
-        <div>
-          <img src={aboutImage} />
-        </div>
+        <div><img src={aboutImage} alt="That's me" /></div>
         <div id="aboutMe">
           <div>
             <div>My name is Ujjwal Pandey, pursuing graduation in:<br /><span> BCA</span> from<span> IGNOU</span>
               and <span>GNIIT</span> from<span> NIIT</span><br /><br />
               I am a full stack Web Developer,
               I work with Java, Advanced-Java, JavaScript, React, MySQL, MongoDB, and so on... according to the projects I am working on.
-              <br /><br />My <strong>"Area of Interest"</strong> includes "Full-stact Web app Development" and Learning technology.
-              I am looking to connect with engeineers and a company to work with on same field of interest.
+              <br /><br />My <strong>"area of Interest"</strong> includes "Full-stack Web app Development" and working with different technologies.
+              I am looking to connect with engineers and company to work with and on same field of interest.
             </div>
-            <div id="downloadCV"><a href="#">Download CV</a></div>
+            <div id="downloadCV"><a href={UjjwalResume} download='file.pdf'>Download CV</a></div>
           </div>
           <div id="bars">
-            <div style={{ fontWeight: "bold" }}><p>Want to know how good I am?</p><hr/></div>
-            <div>
-              <p><span>Back-end Development</span><span>90%</span></p>
-              <section>---------------------------------------------</section>
+            <div ><p>How good I am in?</p><hr /></div>
+            <div className='group'>
+              <p><span>Back-end Development</span><span>85%</span></p>
+              <section><Frag percent="85%" /></section>
             </div>
-            <div>
-              <p>Front-end Development</p>
-              <section>---------------------------------------------</section>
+            <div className='group'>
+              <p><span>Front-end Development</span><span>90%</span></p>
+              <section><Frag percent="90%" /></section>
             </div>
-            <div>
-              <p>ReactJs app Development</p>
-              <section>---------------------------------------------</section>
+            <div className='group'>
+              <p><span>ReactJs app Development</span><span>80%</span></p>
+              <section><Frag percent="80%" /></section>
             </div>
-            <div>
-              <p> Full-Stack app Development</p>
-              <section>---------------------------------------------</section>
+            <div className='group'>
+              <p> <span>Full-Stack app Development</span><span>100%</span></p>
+              <section><Frag percent="100%" /></section>
             </div>
-            <div>
-              <p>Competative Coding</p>
-              <section>---------------------------------------------</section>
+            <div className='group'>
+              <p><span>Competative Coding</span><span>60%</span></p>
+              <section><Frag percent="60%" /></section>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </Fragment>
+  const educationSection = <Fragment>
+    <div id="educationSection">
+      <h1>Education Journey</h1>
+      <div id="firstInEducation">
+        <div><img src={educationPic} alt="That's me with certificate" /></div>
+        <div id="aboutEducation">
+          <div><h1>ACADEMIC</h1></div>
+          <div><p><span>2018-Present</span> <br />GNIIT in Clound and Mobile Software Engineering from NIIT</p></div>
+          <div><p><span>2018-Present</span> <br />BCA from IGNOU</p></div>
+          <div><p><span>2017</span> <br />12th from CBSE</p></div>
+          <div><p><span>2015</span> <br />10th from CBSE</p></div>
+          <div><h1>Educational Work</h1></div>
+          <div><p>Graduation and practice Projects <i><sub>(Give an eye to my github)</sub></i></p></div>
+          <div><p><span>Aug-Sept (2 months)</span> <br />Daily Brief Ambassador</p></div>
+          <div><p>I am a Fresher</p></div>
+        </div>
+      </div>
+    </div>
+  </Fragment>
+  const workExample = <Fragment>
+    <div id="workExamplesSection">
+      <h1>Projects by me</h1>
+      <div id="firstInExamples">
+        <div><img src={projectsPic} alt="That's me with certificate" /></div>
+        <div id="aboutExamples">
+          Work Examples
+        </div>
+      </div>
+    </div>
+  </Fragment>
+  const contactMe = <Fragment>
+    <div id="contactMeSection">
+      <h1>Get In Touch <br /><sub><em>Let's talk about work</em></sub></h1>
+      <div id="firstIncontactMe">
+        <div><img src={contactPic} alt="That's me with certificate" /></div>
+        <div id="aboutContact">
+          <div>
+            <div>
+              <i class="fas fa-envelope"> </i>
+              <a href="mailto:ujjwalpandey.aps@gamil.com"
+                target="_blank"> Ujjwalpandey.aps@gmail.com</a>
+            </div>
+            <div>
+              <i class="fas fa-phone-square-alt"></i>
+              <a href="tel:+918375990500"> +91-8375-990-500</a>
+            </div>
+          </div>
+          <div>
+            <div>
+              <i class="fas fa-map-marker-alt"></i> South Delhi, New Delhi
+            </div>
+            <div>
+              <i class="fab fa-linkedin"></i>
+              <a href="https://www.linkedin.com/in/ujjwal-pandey-8bb562138/"
+                target="_blank" rel="noreferrer"> Ujjwal Pandey</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Fragment>
+  const footer = <Fragment>
+    <div className="footer">
+      Created by: <i>Ujjwal Pandey</i> for <i>Ujjwal Pandey</i> using ReactJs
     </div>
   </Fragment>
   return (
@@ -140,29 +206,12 @@ function App() {
       <div className="main">
         {firstView}
         {aboutSection}
-        {/* <div style="display: block; height: 30px;"></div> */}
-        <div className="about">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis molestiae tenetur, et
-          pariatur dignissimos qui at harum eligendi iste optio, cum voluptas quam. Assumenda at tenetur, numquam
-          dolore, doloribus iste aut veniam dolorem in consectetur alias repudiandae iure non sint. Quidem error
-          aliquam quis repudiandae!</div>
-        <div className="education">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic vitae quasi excepturi. Odio,
-          consequatur voluptatem. Ipsam odio, repellat aliquid, sint vel officiis quisquam enim nostrum, rerum est
-          dicta! Sed tempora sapiente corporis animi modi at beatae magni dolorum reprehenderit minus aspernatur
-          quibusdam ratione delectus, necessitatibus quidem, a iure alias inventore accusamus. Voluptatum nemo dolor
-          quaerat?</div>
-        <div className="workEg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores numquam ratione
-          officiis doloribus rem earum quo labore? Tempore, necessitatibus facere voluptatem magnam a veritatis enim
-          facilis ea fugit unde aliquam accusamus vel eligendi quasi, totam sed excepturi voluptas ipsa dignissimos
-          nostrum nemo. Illo sed dignissimos molestias eligendi officiis possimus consectetur neque, id facilis
-          quaerat consequatur in aut necessitatibus facere vel tempore eius nesciunt voluptatibus nihil mollitia!
-        </div>
-        <div className="contact">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat placeat odio quod doloribus
-          ipsum. Doloremque dicta ipsum fugit similique suscipit. Ad deleniti fugit quod nemo blanditiis itaque
-          similique impedit. Excepturi quam quidem cumque fuga, voluptatibus deserunt?</div>
+        {educationSection}
+        {workExample}
+        {contactMe}
       </div>
+      {footer}
 
-      <div className="footer"></div>
-      <script src="Js.js"></script>
     </Fragment >
   );
 }
