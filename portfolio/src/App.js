@@ -158,8 +158,22 @@ function App() {
       <h1>Projects by me</h1>
       <div id="firstInExamples">
         <div><img src={projectsPic} alt="That's me with certificate" /></div>
-        <div id="aboutExamples">
-          Work Examples
+        <div id="aboutExamples" className='container'>
+          <p>
+            Work Examples<br />
+            <sub><i>( Hover/Touch here )</i></sub>
+          </p>
+          <div className="overlay" id="overlayID">
+            <div className="details">
+              Click eye to see all the projects in one project "links".
+              <div className="eye">
+                <a href="https://ujjwalpandeyjava.github.io/Links/examples.html"
+                  target="_blank" rel="noreferrer">
+                  <i className="far fa-eye"></i>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -172,21 +186,21 @@ function App() {
         <div id="aboutContact">
           <div>
             <div>
-              <i class="fas fa-envelope"> </i>
+              <i className="fas fa-envelope"> </i>
               <a href="mailto:ujjwalpandey.aps@gamil.com"
-                target="_blank"> Ujjwalpandey.aps@gmail.com</a>
+                target="_blank" rel="noreferrer"> Ujjwalpandey.aps@gmail.com</a>
             </div>
             <div>
-              <i class="fas fa-phone-square-alt"></i>
+              <i className="fas fa-phone-square-alt"></i>
               <a href="tel:+918375990500"> +91-8375-990-500</a>
             </div>
           </div>
           <div>
             <div>
-              <i class="fas fa-map-marker-alt"></i> South Delhi, New Delhi
+              <i className="fas fa-map-marker-alt"></i> South Delhi, New Delhi
             </div>
             <div>
-              <i class="fab fa-linkedin"></i>
+              <i className="fab fa-linkedin"></i>
               <a href="https://www.linkedin.com/in/ujjwal-pandey-8bb562138/"
                 target="_blank" rel="noreferrer"> Ujjwal Pandey</a>
             </div>

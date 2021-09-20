@@ -636,9 +636,6 @@ body {
 }
 /* Education section Ends */
 
-/* Example section starts */
-/* Contact section starts */
-
 #aboutExamples,
 #aboutContact {
     border: 1px solid white;
@@ -652,10 +649,75 @@ body {
     align-content: center;
     align-items: center;
     justify-content: space-around;
+    cursor: pointer;
     /* transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); */
 }
+/* About example work start */
 
-#aboutExamples > div,
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    transition: all 1.2s ease-in-out;
+}
+#overlayID {
+    opacity: 0;
+    /* display: none; */
+    display: flex;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.507);
+    font-size: x-large;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    /* transition: all 1.2s ease-in-out, background-color 1.5s cubic-bezier(0.53, -0.13, 0.82, 1.43); */
+    transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s cubic-bezier(0.53, -0.13, 0.82, 1.43);
+}
+.container:hover > p {
+    opacity: 0;
+}
+.container:hover #overlayID {
+    opacity: 1;
+    background-color: #248ccccb;
+}
+.details {
+    /* border: 1px solid black; */
+    position: relative;
+    width: 75%;
+    height: 100%;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.eye {
+    position: absolute;
+    font-size: x-large;
+    width: 39px;
+    height: 31px;
+    background-color: #4798bf;
+    border-radius: 7px;
+    border: 2px solid #3c126396;
+    bottom: 6px;
+    padding: 0;
+    left: 9px;
+}
+.eye > a {
+    text-decoration: none;
+    color: black;
+}
+.eye:hover {
+    box-shadow: 0 0 4px #c9fffe, inset 0 0 3px #ffffff;
+}
+/* About example work ends */
+
 #aboutContact > div {
     display: flex;
     width: 50%;
@@ -676,8 +738,6 @@ body {
     text-decoration: none;
     color: white;
 }
-/* Example section Ends */
-/* Contact section Ends */
 .footer {
     text-align: center;
     background-color: rgba(33, 11, 87, 0.39);
@@ -742,7 +802,6 @@ body {
         right: 18%;
         width: 135px;
     }
-    #aboutExamples > div,
     #aboutContact > div {
         font-size: small;
     }
