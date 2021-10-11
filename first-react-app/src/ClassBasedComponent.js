@@ -3,7 +3,8 @@ import FunctionalComponent from './functionalComponent'
 import ModuleerCss from './FC.module.css'; //Importing module css file for using external css.
 
 //Must extend Component class to make it statefull (class-based)
-//WAY-1: class App extends React.Component | WAY-2: class App extends Component after using import {Component}/React, {Component} from 'react'
+// WAY-1: class App extends React.Component
+// WAY-2: class App extends Component after using import {Component}/React, {Component} from 'react'
 class App extends Component {
     constructor(props) {
         //if cause error put state out of constructor.

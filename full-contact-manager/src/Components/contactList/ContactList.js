@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 export default function ContactList(props) {
-    console.log(props);
+    // console.log(props);
     //Remove contact
     const deleteContect = (id) => {
         props.getContactID(id);

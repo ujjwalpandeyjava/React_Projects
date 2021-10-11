@@ -40,6 +40,7 @@ body {
     color: white;
     padding: 15px 25px;
     top: 0;
+    left: 0;
     background-color: black;
     width: 100%;
     height: 70px;
@@ -133,6 +134,7 @@ body {
     overflow: hidden;
     border-radius: 26% 88px 0px;
     cursor: grabbing;
+    /* display: inline-block; */
 }
 #myAvatar > img {
     width: 100%;
@@ -374,7 +376,8 @@ body {
     padding: 12px;
     margin-bottom: 50px;
     width: 100%;
-    min-height: 65vh;
+    /* min-height: 65vh; */
+    /* min-height: 600px; */
     text-align: center;
     border-radius: 12px;
     display: flex;
@@ -386,7 +389,7 @@ body {
 }
 #workExamplesSection,
 #contactMeSection {
-    min-height: 40vh;
+    min-height: 20vh;
 }
 #aboutSection > h1,
 #educationSection > h1,
@@ -513,7 +516,8 @@ body {
 }
 #downloadCV {
     background-color: #ff9b09;
-    width: 130px;
+    max-width: 170px;
+    width: auto;
     text-align: center;
     border-radius: 20px;
     font-weight: bold;
@@ -569,7 +573,7 @@ body {
 #aboutEducation {
     background-color: #241f30;
     padding: 25px;
-    width: 80%;
+    width: 83%;
     max-width: 600px;
     display: flex;
     flex-direction: column;
@@ -603,20 +607,20 @@ body {
     border-right: 2px solid rgb(153 94 7 / 99%);
     box-shadow: inset 9px 9px 10px 0 black, inset -3px -35px #ffffff00;
 }
-#aboutEducation > div > h1 {
-    color: #95b0f5;
-}
 #aboutEducation > div {
     border-left: 1px solid white;
     min-height: 65px;
-    margin: 0 0 0 18px;
-    padding: 6px 2px 6px 45px;
+    margin: 0 0 0 5px;
+    padding: 6px 2px 6px 20px;
     position: relative;
     display: flex;
     align-items: center;
     text-align: start;
     cursor: grab;
     transition: border 0.3s ease-in-out, margin 0.3s ease-out;
+}
+#aboutEducation > div > h1 {
+    color: #95b0f5;
 }
 #aboutEducation > div:hover {
     border-left: 3px solid rgb(112, 97, 245);
@@ -647,12 +651,14 @@ body {
     border: 1px solid white;
     background-color: #241f30;
     min-width: 90%;
-    min-height: 20vh;
+    height: auto;
+    min-height: 220px !important;
     display: flex;
     padding: 19px;
     flex-direction: row;
     flex-wrap: wrap;
-    align-content: center;
+    /* align-content: center; */
+    align-content: space-around;
     align-items: center;
     justify-content: space-around;
     cursor: pointer;
@@ -674,6 +680,7 @@ body {
     position: absolute;
     left: 0px;
     top: 0px;
+    /* min-height: 1000px; */
     height: 100%;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.507);
@@ -723,7 +730,9 @@ body {
     box-shadow: 0 0 4px #c9fffe, inset 0 0 3px #ffffff;
 }
 /* About example work ends */
-
+#aboutContact {
+    position: relative;
+}
 #aboutContact > div {
     display: flex;
     width: 50%;
@@ -735,10 +744,27 @@ body {
     align-items: center;
     justify-content: space-around;
     font-size: medium;
+    word-break: break-all;
+    padding: 1px;
     cursor: pointer;
+    position: relative;
 }
 #aboutContact:hover {
     min-width: 100%;
+}
+#aboutContact::before {
+    position: absolute;
+    content: "Contact through";
+    top: 5px;
+    width: 90%;
+    left: 50%;
+    color: white;
+    padding: 7px;
+    height: auto;
+    background-color: #241f30;
+    transform: translateX(-50%);
+    z-index: 12;
+    border-bottom: 1px solid gray;
 }
 #aboutContact > div > div > a {
     text-decoration: none;
@@ -766,7 +792,7 @@ body {
 @media (max-width: 970px) {
     .firstView {
         flex-direction: column;
-        min-height: 90vh;
+        min-height: 80vh;
     }
     .firstView > div {
         height: 50%;
@@ -811,11 +837,27 @@ body {
         font-size: small;
     }
 }
+@media (max-width: 500px) {
+    #myAvatar {
+        display: none;
+    }
+    .firstView,
+    .firstView > div,
+    .firstView > div > .wrapper {
+        padding: 0;
+    }
+    .wrapper .static-txt {
+        font-size: small;
+    }
+}
 @media (max-width: 400px) {
     .navbar > h1 {
         font-size: x-large;
     }
     #aboutSection > h1 {
+        font-size: x-large;
+    }
+    #aboutEducation > div > h1 {
         font-size: x-large;
     }
 }
@@ -856,10 +898,11 @@ body {
     transition: 0.4s;
     text-decoration: none;
 }
-h3 a:hover {
+.move h3 a:hover {
     padding-left: 50px;
     text-shadow: 1px 1px 1px #4bb1b3a6, 0px 0px 1px #ffffff;
 }
+
 #check {
     position: absolute;
     display: none;
@@ -909,3 +952,62 @@ label #cancel {
     opacity: 0;
 }
 /*Small screen navbar end*/
+
+/*  Working languages section.*/
+.workingWith {
+    display: block;
+}
+.workWith {
+    position: relative;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    transition: all 1.2s ease-in-out;
+}
+.workWith::before {
+    content: "";
+    display: block;
+}
+#workH3 {
+    float: left;
+    font-family: Rubik;
+    padding: 6px 10px;
+    font-size: x-large;
+    text-shadow: 1px 1px 2px #c14d4d, 3px 2px 2px #4798bf;
+}
+.workWith > div {
+    width: 20%;
+    /* border: 1px solid red; */
+    padding: 8px;
+    min-width: 60px;
+    max-width: 150px;
+    min-height: 60px;
+    max-height: 150px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+@media (max-width: 350px) {
+    .workWith > div {
+        width: 60px;
+    }
+}
+.workWith > div > a {
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    cursor: pointer;
+}
+.workWith > div > a > img {
+    height: 100%;
+    width: 100%;
+    object-fit: inherit;
+    margin: 0 auto;
+    border-radius: 7px;
+}
+.workWith > div > a > img:hover {
+    box-shadow: 0 1px 5px rgba(255, 255, 255, 0.658);
+}
+.workWith::-webkit-scrollbar {
+    visibility: hidden;
+}

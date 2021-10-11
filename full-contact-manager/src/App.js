@@ -7,7 +7,7 @@ import ContactList from './Components/contactList/ContactList';
 import Header from './Components/header/Header';
 import ContactDetails from './Components/contactDetails/ContactDetails';
 import EditContact from './Components/EditContact';
-/*/
+/*
 Used Local storage to store contacts.
 not stored in any api/database/file
 */
@@ -31,7 +31,7 @@ export default function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contact))
   }, [contact])
 
-  //Remove a contact
+  //To remove a specific contact
   const removeContact = (id) => {
     const newContact = contact.filter((contact) => { return contact.id !== id });
     setContact(newContact);
@@ -39,37 +39,27 @@ export default function App() {
 
   return (
     <div>
-      {/* //BrouserRouter(as Route): what to route? */}
-      {/* Router > ( Link*X(or anywhere) + Switch*1>(Route[path='/abc']*X) ) Links can be added to any page anywhere*/}
+      {/* \\ BrouserRouter(as Route): what to route? 
+          \\ Router > ( Link*X(or anywhere) + Switch*1>(Route[path='/abc']*X) ) Links can be added to any page anywhere*/}
       <BrowserRouter>
         <Header />
-        <Switch>
           {/* This Route approach is slow as it used ananomous function which execute on every click */}
-          <Route
-            path="/" exact
-            render={(props) => (
-              <ContactList
-                {...props}
-                contactList={contact}
-                getContactID={removeContact} />
-            )}
+        <Switch>
+          <Route path="/" exact
+            render={(props) => (<ContactList {...props} contactList={contact} getContactID={removeContact} />)} 
           />
-          <Route
-            path="/add" exact
-            component={(props) =>
-              <AddContact {...props}
-                addContact={addContact} />
-            } />
-          {/* Full details of every contact */}
+
+          <Route path="/add" exact
+            component={(props) => <AddContact {...props} addContact={addContact} />} 
+          />
+          
+          {/* Full details of each contact */}
           <Route path="/contactDetails/:id"
-            component={ContactDetails} />
-          {/* //Don't use arrow function while passing the data as object in Link tag */}
-          <Route
-            path="/edit/:id/" exact
-            component={(props) =>
-              <EditContact {...props}
-              />
-            } />
+            component={ContactDetails} /> {/* //Don't use arrow function while passing the data as object in Link tag */}
+
+          <Route path="/edit/:id/" exact
+            component={(props) => <EditContact {...props} /> }
+          />
         </Switch>
       </BrowserRouter>
       {/* <AddContact addContact={addContact} /> */}

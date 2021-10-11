@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 function ContactDetails(props) {
     const { email, id, name, phone } = props.location.state.contactDetails;
+    console.log(props.location.state.contactDetails);
     return (
         <div className="fulDetails" >
             <div>
@@ -23,7 +24,7 @@ function ContactDetails(props) {
                     <button style={{
                         padding: '5px 10px', backgroundColor: 'skyblue',
                         border: '1px solid black', marginLeft: '60px'
-                    }}><i className="far fa-edit"></i>Edit (not working)</button>
+                    }}><i className="far fa-edit"></i>Edit (in production)</button>
                 </Link>
             </div>
         </div>

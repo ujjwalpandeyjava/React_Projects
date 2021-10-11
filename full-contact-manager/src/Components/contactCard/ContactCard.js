@@ -6,7 +6,8 @@ function ContactCard(props) {
     return (
         <div className="eachContact">
             <Link
-                to={{ pathname: `/contactDetails/${id}`, state: { contactDetails: props.data } }}
+                /* This state attribute add the data for the custom link as state.contactDetails */
+                to={{ pathname: `/contactDetails/${id}`, state: { contactDetails: props.data } }} 
                 style={{ textDecoration: 'none' }}>
                 Name: {name}<br />
                 Eamil: {email}<br />
