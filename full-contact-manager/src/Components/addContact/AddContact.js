@@ -20,7 +20,7 @@ export default function AddContact(props) {
         setName('')
         setEmail('')
         setPhone('')
-        console.log("sdlfasd", props);
+        // console.log("sdlfasd", props);
         props.history.push("/")
     }
     return (

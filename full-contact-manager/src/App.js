@@ -16,10 +16,25 @@ export default function App() {
   const [contact, setContact] = useState([]);
 
   const addContact = (name, email, phone) => {
-    console.log('appjs', name, email, phone);
+    // console.log('appjs', name, email, phone);
     let con = { name, email, phone };
     setContact([...contact, { id: uuid(), ...con }]);
   };
+
+  let updateContact = (ID, emailI, nameI, phoneI) => {
+    // let newData = { ID, nameI, emailI, phoneI };
+    // console.log(newData);
+    let cont = contact.map(item => {
+      console.log(item);
+      if (item.id === ID) {
+        item.name = nameI;
+        item.email = emailI; 
+        item.phone = phoneI;
+      }
+      return item;
+    });
+    setContact(cont);
+  }
 
   useEffect(() => {
     const contactsRetrieved = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
@@ -43,22 +58,22 @@ export default function App() {
           \\ Router > ( Link*X(or anywhere) + Switch*1>(Route[path='/abc']*X) ) Links can be added to any page anywhere*/}
       <BrowserRouter>
         <Header />
-          {/* This Route approach is slow as it used ananomous function which execute on every click */}
+        {/* This Route approach is slow as it used ananomous function which execute on every click */}
         <Switch>
           <Route path="/" exact
-            render={(props) => (<ContactList {...props} contactList={contact} getContactID={removeContact} />)} 
+            render={(props) => (<ContactList {...props} contactList={contact} getContactID={removeContact} />)}
           />
 
           <Route path="/add" exact
-            component={(props) => <AddContact {...props} addContact={addContact} />} 
+            component={(props) => <AddContact {...props} addContact={addContact} />}
           />
-          
+
           {/* Full details of each contact */}
           <Route path="/contactDetails/:id"
             component={ContactDetails} /> {/* //Don't use arrow function while passing the data as object in Link tag */}
 
           <Route path="/edit/:id/" exact
-            component={(props) => <EditContact {...props} /> }
+            component={(props) => <EditContact {...props} updateContact={updateContact} />}
           />
         </Switch>
       </BrowserRouter>

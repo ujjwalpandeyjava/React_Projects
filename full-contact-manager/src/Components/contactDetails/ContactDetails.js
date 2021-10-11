@@ -24,7 +24,7 @@ function ContactDetails(props) {
                     <button style={{
                         padding: '5px 10px', backgroundColor: 'skyblue',
                         border: '1px solid black', marginLeft: '60px'
-                    }}><i className="far fa-edit"></i>Edit (in production)</button>
+                    }}><i className="far fa-edit"></i>Edit</button>
                 </Link>
             </div>
         </div>

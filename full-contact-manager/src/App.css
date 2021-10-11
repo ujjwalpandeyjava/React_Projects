@@ -2,7 +2,7 @@
   --nar: 78px;
   font-size: 15px;
 }
-*{
+* {
   padding: 0;
   /* margin: 0px; */
   box-sizing: border-box;
@@ -18,6 +18,21 @@
   text-align: end;
 }
 
-.fulDetails{
+.fulDetails {
   margin: 13px;
+  user-select: none;
+  cursor: no-drop;
+}
+.group {
+  padding: 10px;
+}
+.group > input {
+  padding: 4px 6px;
+  min-width: 220px;
+  border: none;
+  border-bottom: 1px solid;
+}
+
+.group > input[type="submit"] {
+  cursor: pointer;
 }
