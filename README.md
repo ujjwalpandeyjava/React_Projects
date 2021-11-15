@@ -39,9 +39,9 @@ Contining funcnlaties are:
 Create while learning all the concepts of react, it have nearly all the react topics with example and notes by me.
 
 
-# 3. Contact manager (Advanced)
+# 4. Contact manager (Advanced)
 Advanced version of Contact manager app.
 
 
-# 3. Portfolio (My main portfolio with react)
+# 5. Portfolio (My main portfolio with react)
 My journey and details of education, work etc.
