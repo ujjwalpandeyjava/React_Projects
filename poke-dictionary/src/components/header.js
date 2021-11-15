@@ -7,6 +7,7 @@ import './cssFiles/header.css'
 function Header(props) {
     return (
         <Fragment>
+            I have to change all the detials of this app in order to make the navigation better.
             <div className="navbar vertical-content-center">
                 <div className="navbar_inner">
                     <div class="nav-header">
