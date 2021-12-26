@@ -1,3 +1,19 @@
+# Pokemon Go Dictionary React app
+
+Project is for practice and production upload site.
+To give all details of pokemon available in game - pokemon go.
+
+## Contains:
+1. API fetching to show list of all pokemon Go - Pokemons
+2. Own single page to show the details of each pokemon of game.
+3. Every page is routed with same code in **React app.** 
+
+\
+\
+\
+\
+\
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
