@@ -10,7 +10,6 @@ import myPicture from './images/IMG-20210325-WA0006.jpg'
 import htmlImage from './images/html.jpg'
 import cssImage from './images/css.jpg'
 import jsImage from './images/js.jpg'
-import msOfficeImage from './images/msOffice.jfif'
 import reactImage from './images/ReactJS.jpg'
 import restAPIImage from './images/restAPI.jfif'
 import javaImage from './images/java.jpg'
@@ -21,6 +20,7 @@ import GAEImage from './images/GAE.jpg'
 import gitImage from './images/git.jfif'
 import springImage from './images/spring1.jpg'
 import hibernateImage from './images/hibernate.png'
+import msOfficeImage from './images/msOffice.jfif'
 import dsAlgoImage from './images/dsalog.jfif'
 import etcImage from './images/etc.jfif'
 
@@ -247,7 +247,8 @@ function App() {
     <div className="workingWith">
       <h2 id="workH3">I work with <sub><i>Click to get details</i></sub></h2>
       <div id="aboutExamples" className='workWith' style={{
-        maxHeight: "300px", overflow: "auto",
+        margin: "30px auto", minWidth: "85%",
+        maxWidth: "1150px", overflow: "auto",
         boxShadow: "inset 0 -3px 7px #969696",
         borderRadius: "12px",
         alignItems: "baseline",
