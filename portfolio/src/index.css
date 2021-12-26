@@ -154,6 +154,10 @@ body {
     font-size: 28px;
     display: block;
     font-weight: 400px;
+    /* To make the "I AM A" only outlined */
+    color: transparent;
+    padding: 0;
+    -webkit-text-stroke: 0.2px white;
 }
 .wrapper .dynamic-txts {
     height: 30px;
