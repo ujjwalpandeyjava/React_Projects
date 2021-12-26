@@ -153,9 +153,10 @@ body {
     padding: 0;
     font-size: 28px;
     display: block;
-    font-weight: 400px;
-    /* To make the "I AM A" only outlined */
     color: transparent;
+    text-decoration: underline;
+    text-underline-position: from-font;
+    text-decoration-color: rgb(255 0 0 / 70%);
     padding: 0;
     -webkit-text-stroke: 0.2px white;
 }
@@ -586,7 +587,9 @@ body {
     justify-content: space-around;
     align-items: flex-start;
     position: relative;
+    overflow: hidden;
 }
+
 #aboutEducation:hover {
     max-width: 750px;
 }
@@ -611,6 +614,18 @@ body {
     border-right: 2px solid rgb(153 94 7 / 99%);
     box-shadow: inset 9px 9px 10px 0 black, inset -3px -35px #ffffff00;
 }
+#aboutEducation::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 200%;
+    transform: rotate(45deg) translate(-19%, 0);
+    /* background: #ff8d00; */
+    background: #ff6a00;
+    z-index: 1;
+}
 #aboutEducation > div {
     border-left: 1px solid white;
     min-height: 65px;
@@ -622,6 +637,7 @@ body {
     text-align: start;
     cursor: grab;
     transition: border 0.3s ease-in-out, margin 0.3s ease-out;
+    z-index: 3;
 }
 #aboutEducation > div > h1 {
     color: #95b0f5;
