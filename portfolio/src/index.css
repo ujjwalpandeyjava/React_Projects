@@ -641,6 +641,7 @@ body {
 }
 #aboutEducation > div > h1 {
     color: #95b0f5;
+    text-shadow: 1px 2px 1px rgb(247 247 247 / 80%);
 }
 #aboutEducation > div:hover {
     border-left: 3px solid rgb(112, 97, 245);
@@ -661,8 +662,9 @@ body {
 }
 #aboutEducation > div > p > span {
     /* color: #5c4f5cef; */
-    color: gray;
+    color: #3df9e9d4;
     font-size: small;
+    text-shadow: 1px 1px 0px #2700ff96;
 }
 /* Education section Ends */
 

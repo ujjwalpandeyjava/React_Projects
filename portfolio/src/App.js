@@ -130,11 +130,11 @@ function App() {
         <div><img src={aboutImage} alt="That's me" /></div>
         <div id="aboutMe">
           <div>
-            <div>My name is Ujjwal Pandey, pursuing graduation in:<br /><span> BCA</span> from<span> IGNOU</span>
-              and <span>GNIIT</span> from<span> NIIT</span><br /><br />
-              I am a full stack Web Developer,
+            <div>Hi, my name is Ujjwal Pandey, I am pursuing graduation in:<br /><span>GNIIT</span> from<span> NIIT</span>,
+              and <span>BCA</span> from<span> IGNOU</span><br /><br />
+              I am a Full Stack Web Developer,
               I work with Java, Advanced-Java, JavaScript, React, MySQL, MongoDB, and so on... according to the projects I am working on.
-              <br /><br />My <strong>"area of Interest"</strong> includes "Full-stack Web app Development" and working with different technologies.
+              <br /><br />My "<strong>Area of Interest</strong> includes "Full-stack Web app Development" and working with different technologies.
               I am looking to connect with engineers and company to work with and on same field of interest.
             </div>
             <div id="downloadCV"><a href={UjjwalResume} download='Ujjwal-resume.pdf'>Download Resume</a></div>
@@ -178,9 +178,9 @@ function App() {
           <div><p><span>2017</span> <br />12th from CBSE</p></div>
           <div><p><span>2015</span> <br />10th from CBSE</p></div>
           <div><h1>Educational Work</h1></div>
-          <div><p>Graduation and practice Projects <i><sub>(Give an eye to my github)</sub></i></p></div>
+          <div><p>Practice and Graduation project<i><sub>(Chekout github)</sub></i></p></div>
           <div><p><span>Aug-Sept (2 months)</span> <br />Daily Brief Ambassador</p></div>
-          <div><p>I am a Fresher</p></div>
+          <div><p><span>Oct-Present</span> <br />NetCreativeMind</p></div>
         </div>
       </div>
     </div>
