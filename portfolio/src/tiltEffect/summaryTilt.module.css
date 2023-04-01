@@ -1,0 +1,6 @@
+/* .colorRed {color: red;}#colorID {color: blue;}#colorID4,.colorID4 {color: rosybrown;} */
+
+.card {
+	min-width: 200px;
+	max-width: 400px;
+}
