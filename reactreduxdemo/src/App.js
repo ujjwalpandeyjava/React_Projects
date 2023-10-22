@@ -17,7 +17,7 @@ Redux: npm i
  */
 
 import { Provider } from 'react-redux';
-import './App.css';
+import './style/App.css';
 import { store } from './appStore/store';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
@@ -27,7 +27,7 @@ function App() {
     <Provider store={store}>
       <AddTodo></AddTodo>
       <hr/>
-      <Todos></Todos>
+      <Todos/>
     </Provider>
   );
 }
