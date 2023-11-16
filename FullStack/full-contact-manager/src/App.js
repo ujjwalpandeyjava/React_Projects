@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { uuid } from 'uuidv4';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+// import { uuid } from 'v4';
 import './App.css';
+import EditContact from './Components/EditContact';
 import AddContact from './Components/addContact/AddContact';
+import ContactDetails from './Components/contactDetails/ContactDetails';
 import ContactList from './Components/contactList/ContactList';
 import Header from './Components/header/Header';
-import ContactDetails from './Components/contactDetails/ContactDetails';
-import EditContact from './Components/EditContact';
+import homepage from '../package.json'
 /*
 Used Local storage to store contacts.
 not stored in any api/database/file
@@ -25,12 +27,12 @@ export default function App() {
     // let newData = { ID, nameI, emailI, phoneI };
     // console.log(newData);
     let cont = contact.map(item => {
-      console.log(item);
       if (item.id === ID) {
         item.name = nameI;
-        item.email = emailI; 
+        item.email = emailI;
         item.phone = phoneI;
       }
+      alert("Updated");
       return item;
     });
     setContact(cont);
@@ -56,26 +58,16 @@ export default function App() {
     <div>
       {/* \\ BrouserRouter(as Route): what to route? 
           \\ Router > ( Link*X(or anywhere) + Switch*1>(Route[path='/abc']*X) ) Links can be added to any page anywhere*/}
-      <BrowserRouter>
+      {console.log(homepage.homepage)}
+      <BrowserRouter basename={homepage.homepage}>
         <Header />
         {/* This Route approach is slow as it used ananomous function which execute on every click */}
-        <Switch>
-          <Route path="/" exact
-            render={(props) => (<ContactList {...props} contactList={contact} getContactID={removeContact} />)}
-          />
-
-          <Route path="/add" exact
-            component={(props) => <AddContact {...props} addContact={addContact} />}
-          />
-
-          {/* Full details of each contact */}
-          <Route path="/contactDetails/:id"
-            component={ContactDetails} /> {/* //Don't use arrow function while passing the data as object in Link tag */}
-
-          <Route path="/edit/:id/" exact
-            component={(props) => <EditContact {...props} updateContact={updateContact} />}
-          />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<ContactList contactList={contact} getContactID={removeContact} />} />
+          <Route path="/add" element={<AddContact addContact={addContact} />} />
+          <Route path="/contactDetails/:id" element={<ContactDetails />} />
+          <Route path="/edit/:id/" exact element={<EditContact updateContact={updateContact} />} />
+        </Routes>
       </BrowserRouter>
       {/* <AddContact addContact={addContact} /> */}
       {/* <ContactList contactList={contact} getContactID={removeContact} /> */}
@@ -84,8 +76,8 @@ export default function App() {
 }
 /*
 Using Route tag
-        1). <Route path="/" exact component={ContactList} />//when we don't have any props to pass in Component
-        2). <Route path="/" exact component={
+        1). <Route path="/" exact element={ContactList} />//when we don't have any props to pass in Component
+        2). <Route path="/" exact element={
             ()=><ContactList contactList={contact} getContactID={removeContact} />
           } />//When we have props to pass in Component
         3). <Route

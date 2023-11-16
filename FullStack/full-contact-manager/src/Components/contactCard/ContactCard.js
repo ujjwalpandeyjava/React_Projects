@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
 function ContactCard(props) {
-    var { email, id, name, phone } = props.data;
-
+    console.log(props);
+    const { email, id, name, phone } = props.data;
     return (
         <div className="eachContact">
             <Link
