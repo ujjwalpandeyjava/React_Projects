@@ -1,3 +1,7 @@
+>> Sever/host: 
+	https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing
+
+
 Google All about react components.
 https://medium.com/wesionary-team/types-of-react-components-you-should-know-251cceacd8ac
 
@@ -8,3 +12,53 @@ and, after cloning to system first run comand 'npm install' to load all the node
 
 Before starting any app use "npm install"
 You are a reputative company working here will help company and me to grow fast utilizing my skills
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Solve:
+One of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it may break at any time.
+
+babel-preset-react-app is part of the create-react-app project, which
+is not maintianed anymore. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.
+
+Solution: npm install --save-dev @babel/plugin-proposal-private-property-in-object
+
+
+
+==== how to change port of react app
+1. In `package.json` file:
+```json 
+"scripts": {
+  "start": "react-scripts start",
+  -> "start": "PORT=3006 react-scripts start",
+}
+```
+
+This will set the default port to 3006 when starting the dev server.
+2. In `src/index.js`:
+```js
+ReactDOM.render(<App />, document.getElementById('root'));
+-> ReactDOM.render(<App />, document.getElementById('root'), 3006); 
+```
+
+Pass the port as the 3rd argument to `ReactDOM.render`.
+
+Now when you start your app, it will run on port 3006 instead of the default 3000.
+
+3. you can define a `.env` file to set the port there:
+
+```
+PORT=3006
+```
+
+And access it via `process.env.PORT` in your code. This keeps the port config separate.
+
+Let me know if you have any other questions!
+
+
