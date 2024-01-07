@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-export default function FucntionalTakeInputValue(props) {
+export default function FunctionalTakeInputValue(props) {
     const [inputValue, setInputValue] = useState(null)
     const [showInputValue, setShowInputValue] = useState(false)
 
     /*  event:-                 gives so much unable to understand.
         event.target:-          gives the full tag without value.
         event.target.value:-    gives the value of the data inserted  */
-        
+
     function getInputValue(event) {
         console.log('Value changed to:', event.target.value)
         setInputValue(event.target.value)

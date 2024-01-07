@@ -1,13 +1,16 @@
-import React, { Fragment, useEffect, useState } from 'react'
-import axios from 'axios'
+import axios from 'axios';
+import React, { Fragment, useEffect, useState } from 'react';
 
-function DeleteMeToo() {
+function FetchDataFromPublic() {
     let [pokemonData, setPokemonData] = useState([])
-
     //  To get data from local file put the data in public folder.
     useEffect(() => {
-        axios.get('deleteme.json')
-            .then(res => { /* console.log("ff", res.data); */ setPokemonData(res.data.pokemon) })
+        // present in public folder
+        axios.get('pokemon.json')
+            .then(res => {
+                console.log("ff", res, res.data);
+                setPokemonData(res.data.pokemon)
+            })
             .catch(e => console.warn(e))
     }, []);
     return (
@@ -30,31 +33,15 @@ function DeleteMeToo() {
                                 <td style={{ padding: 5 }}>{individualPokemonDetail.num}</td>
                                 <td style={{ padding: 5 }}>{individualPokemonDetail.name}</td>
                                 <td style={{ padding: 5 }}>{individualPokemonDetail.egg}</td>
-                                <td style={{ padding: 5 }}><img width='100' height='100' alt={"Pokemon " +individualPokemonDetail.name} src={individualPokemonDetail.img}></img><br />{individualPokemonDetail.height}</td>
+                                <td style={{ padding: 5 }}><img width='100' height='100' alt={"Pokemon " + individualPokemonDetail.name} src={individualPokemonDetail.img}></img><br />{individualPokemonDetail.height}</td>
                                 <td><strong>{individualPokemonDetail.spawn_chance}<hr />{individualPokemonDetail.spawn_time}</strong></td>
                             </tr>
                         )
                     })}
                 </tbody>
             </table>
-            <h2> Way 2</h2>
-            <table border='1' style={{ width: '100%' }}>
-                <tbody>
-                    <tr>
-                        <th>Id</th>
-                    </tr>
-                    {/* {jph.map((individualPokemonDetail, pos) => {
-                        return (
-                            <tr key={pos}>
-                                <td style={{ padding: 5 }}>{individualPokemonDetail.id}</td>
-                                <td style={{ padding: 5 }}>{individualPokemonDetail.title}</td>
-                            </tr>
-                        )
-                    })} */}
-                </tbody>
-            </table>
         </Fragment>
     )
 }
 
-export default DeleteMeToo
+export default FetchDataFromPublic;

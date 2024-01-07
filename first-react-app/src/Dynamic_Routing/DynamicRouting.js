@@ -1,32 +1,35 @@
-import { Link, Route, BrowserRouter as Router } from "react-router-dom"
-import React from 'react'
-import ViewOfUser from './ViewOfUser'
+import SelectUser from './SelectUser'
+import DynamicPage from './DynamicPage'
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 
+const users = [
+    { profile: "profile 1", id: 1, name: 'Ujjwal', email: 'ujjwal@test.com' },
+    { profile: "profile 2", id: 2, name: 'Rahul', email: 'rahul@test.com' },
+    { profile: "profile 3", id: 3, name: 'Suraj', email: 'suraj@test.com' },
+    { profile: "profile 4", id: 4, name: 'Arbaaz', email: 'arbaaz@test.com' },
+    { profile: "profile 5", id: 5, name: 'Savita', email: 'savita@test.com' },
+    { profile: "profile 6   ", id: 44, name: 'Nitesh', email: 'nitesh@test.com' }
+]
 
-function DynamicRouting() {
-    let users = [
-        { id: 1, name: 'Ujjwal', email: 'ujjwal@test.com' },
-        { id: 2, name: 'Rahul', email: 'rahul@test.com' },
-        { id: 3, name: 'Suraj', email: 'suraj@test.com' },
-        { id: 4, name: 'Arbaaz', email: 'arbaaz@test.com' },
-        { id: 5, name: 'Savita', email: 'savita@test.com' },
-        { id: 44, name: 'Nitesh', email: 'nitesh@test.com' }
-    ]
-
+export default function DynamicRouting() {
     return (
         <div>
-            Dynamic Routing example component
-            <Router>
-                {
-                    // users.map((item, pos) => <div><Link to={"/user/" + item.id + "/" + item.name + "/" + item.email}><h3>{item.name}</h3></Link></div>)
-                    users.map((item, pos) => <div><Link to={"/user/" + item.email}><h3>{item.name}</h3></Link></div>)
-                }
-                {/* <Route path="/user/:id/:name/:email"><ViewOfUser /></Route> */}
-                <Route path="/user/:email"><ViewOfUser /></Route>
-            </Router>
+            <h1>Must be inside a BrowserRouter of main component</h1>
+            <BrowserRouter>
+                {users.map(eachUser => <div>
+                    <Link className="link" to={`/user/${eachUser.email}`}>
+                        Mail:  <SelectUser name={eachUser.name} />{eachUser.name}
+                    </Link> <br />
+                    <Link className="link" to={`/user/${eachUser.email}/${eachUser.profile}`}>
+                        Profile: <SelectUser name={eachUser.profile} />{eachUser.profile}
+                    </Link>
+                </div>)}
+                <Routes>
+                    <Route path='/user/:email' element={<DynamicPage />} />
+                    <Route path='/user/:email/:profile' element={<DynamicPage />} />
+                    <Route path='*' element={<DynamicPage />} />
+                </Routes>
+            </BrowserRouter>
         </div >
     );
 }
-
-
-export default DynamicRouting
