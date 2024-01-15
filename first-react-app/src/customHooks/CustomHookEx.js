@@ -2,41 +2,39 @@ import { Fragment } from "react";
 import useFetch from "./useFetch";
 
 function CustomHookEx() {
-	const { data, isPending, isErrorState } = useFetch({ url: "https://picsum.photos/v2/list?page=1&limit=10" });
-	// const { data, isPending, isErrorState } = useFetch({ url: "https://picsum.photos/list?page=1&limit=10" });
-	console.log({ data, isErrorState, isPending });
+	const { data: slideImages, isPending, isErrorState } = useFetch({ url: "https://picsum.photos/v2/list?page=1&limit=10" });
 	return (
 		<Fragment>
 			<h1>CustomHookEx</h1>
 			<hr />
-			<p>
+			<div>
 				Pending: {isPending && <span>Loading...</span>}
-			</p>
-			<p>
+			</div>
+			<div>
 				Pending: {isPending ? <span>Loading...</span> : <span>Loaded</span>}
-			</p>
+			</div>
 
 			<hr />
-			<p>
+			<div>
 				Data:
-				{data?.map((item, index) => (
+				{slideImages?.map((item, index) => (
 					<div key={index + 1}>{item.id}). url: <i>{item.url}</i></div>
 				))}
-			</p>
-			<p>
-				Data: {!data ? <span>No data</span> :
-					data?.map((item, index) => (
+			</div>
+			<div>
+				Data: {!slideImages ? <span>No data</span> :
+					slideImages?.map((item, index) => (
 						<div key={index + 1}>{item.id}). url: <i>{item.url}</i></div>
 					))}
-			</p>
+			</div>
 
 			<hr />
-			<p>
+			<div>
 				Error: {isErrorState && <span>{isErrorState}</span>}
-			</p>
-			<p>
+			</div>
+			<div>
 				Error: {isErrorState ? <span>{isErrorState}</span> : <span>No error</span>}
-			</p>
+			</div>
 			<hr />
 		</Fragment>
 	)

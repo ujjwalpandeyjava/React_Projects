@@ -5,7 +5,7 @@
 // import FunctionalTakeInputValue from './FunctionalTakeInputValue';
 // import BasicRouting from './BasicRouting';
 // import DynamicRouting from './Dynamic_Routing/DynamicRouting';
-// import {CustomHookEx} from './customHooks/CustomHookEx';
+import {CustomHookEx} from './customHooks/CustomHookEx';
 // import ReactForm from './ReactForm';
 // import HighOrderComponent from './HighOrderComponent';
 // import FetchingAPI from './APIs_play/FetchingAPI';
@@ -130,7 +130,7 @@ const elemetnToPass = constArrObj.map((item) => {
       {/* <HighOrderComponent /> */}
       {/* <BasicRouting /> */}
       {/* <DynamicRouting /> */}
-      {/* <CustomHookEx/> */}
+      <CustomHookEx/>
       {/* <FetchingAPI /> */}
       {/* <FetchDataFromPublic /> */}
 
