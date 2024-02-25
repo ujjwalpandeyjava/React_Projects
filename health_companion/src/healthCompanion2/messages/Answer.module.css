@@ -1,0 +1,54 @@
+.serverResponse {
+    padding: 0.5em 0.25em 0.5em 0.6em;
+    border-radius: var(--chatResponseBorderRadius);
+    max-width: 90%;
+    background-color: #fff;
+    font-size: 1.09em;
+    margin-right: auto;
+    filter: drop-shadow(0 0 2.5px #161616);
+    color: black;
+}
+
+.oneNewSectionForHeadAndRead {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    justify-content: flex-end;
+}
+
+.contentToReadLoud {
+    width: 100%;
+    padding-right: 6px;
+    text-align: left;
+    overflow: auto;
+}
+
+.responseHead {
+    font-size: 1.25em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.responseHead * {
+    cursor: pointer;
+}
+
+.copyContent {
+    color: rgb(5, 5, 31);
+}
+
+.contentCopied {
+    color: rgb(5, 126, 39);
+}
+
+.speakContent {
+    color: rgb(5, 5, 31);
+}
+
+.pauseContent {
+    color: rgb(200, 228, 255);
+
+}

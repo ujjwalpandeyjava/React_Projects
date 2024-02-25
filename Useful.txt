@@ -27,38 +27,49 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.
 
-Solution: npm install --save-dev @babel/plugin-proposal-private-property-in-object
+Solution:
+	npm install --save-dev @babel/plugin-proposal-private-property-in-object
 
 
-
-==== how to change port of react app
-1. In `package.json` file:
-```json 
-"scripts": {
-  "start": "react-scripts start",
-  -> "start": "PORT=3006 react-scripts start",
-}
-```
-
+============== How to change port of react app
 This will set the default port to 3006 when starting the dev server.
-2. In `src/index.js`:
-```js
-ReactDOM.render(<App />, document.getElementById('root'));
--> ReactDOM.render(<App />, document.getElementById('root'), 3006); 
-```
 
-Pass the port as the 3rd argument to `ReactDOM.render`.
+>> Way 1. In `package.json` file: 
+"scripts": {
+  from ->	"start": "react-scripts start", // default 3000
+  to -> 	"start": "PORT=3006 react-scripts start",
+}
 
-Now when you start your app, it will run on port 3006 instead of the default 3000.
+>> Way 2. In `src/index.js`:
+From -> ReactDOM.render(<App />, document.getElementById('root'));
+To -> 	ReactDOM.render(<App />, document.getElementById('root'), 3006); 
 
-3. you can define a `.env` file to set the port there:
 
-```
+
+>> Way 3. Define `.env` file:  This keeps the port config separate
 PORT=3006
-```
+And access it via `process.env.PORT` in code, OR
 
-And access it via `process.env.PORT` in your code. This keeps the port config separate.
+============= How to use .env in React
+>> Way 1. install 'npm react-dotenv' and change the package.json "scripts" json to:
+"scripts": {
+    "start": "react-dotenv && react-scripts start",
+    "build": "react-dotenv && react-scripts build",
+    "test": "react-dotenv && react-scripts test",
+    "serve": "react-dotenv && serve build",
+    "eject": "react-scripts eject"
+}
+add this
+"react-dotenv": {
+    "whitelist": [
+      "KEY_Names1",
+      "KEY_Names2",
+    ]
+}
+issue with this approch: it gives all the key to user visible in network tab and in window.
 
-Let me know if you have any other questions!
-
-
+>> Way 2. 
+	Create a .env file in the root directory of project
+	Add custom variables with the prefix 'REACT_APP_', example: REACT_APP_API_KEY=123456789
+	Use 'process.env.REACT_APP_API_KEY' to access, example: const apiKey = process.env.REACT_APP_API_KEY;
+Safe, no data leak

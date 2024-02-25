@@ -1,0 +1,23 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.main>* {
+    cursor: pointer;
+}
+
+.speakContent {
+    color: black;
+}
+
+.pauseContent {
+    color: green;
+}
+
+.stopContent {
+    color: rgb(214, 3, 3);
+}

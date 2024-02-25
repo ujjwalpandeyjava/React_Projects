@@ -1,0 +1,67 @@
+[
+  {
+    "heading": "About your Health",
+    "questions": [
+      "I'm experiencing typical UTI symptoms; can you provide assistance?",
+      "How has my blood pressure been lately?",
+      "I woke up with a sore lower back today, any advice?",
+      "Display my blood pressure information."
+    ]
+  },
+  {
+    "heading": "Your wellness",
+    "questions": [
+      "What foods do you recommend for me?",
+      "Are green beans a good choice for my health?",
+      "Should I include broccoli in my diet?",
+      "Please suggest an exercise regimen for me."
+    ]
+  },
+  {
+    "heading": "Your Appointments",
+    "questions": [
+      "I'd like to schedule an appointment with a doctor.",
+      "How can I cancel my upcoming appointment?",
+      "What appointments do I have next week?"
+    ]
+  },
+  {
+    "heading": "Send Alert, Contact Us, or Request Reminder",
+    "questions": [
+      "Inform my doctor to call me.",
+      "I need help, please ask my doctor to call me.",
+      "Set a daily reminder for me to take my medication at 8 AM."
+    ]
+  },
+  {
+    "heading": "About Us",
+    "questions": [
+      "What are hours of operation?",
+      "What is required to talk to your doctor?",
+      "Do online doctors accept insurance?",
+      "Provide a list of doctors working with their specialties.",
+      "What is the cost of your service?"
+    ]
+  },
+  {
+    "heading": "Your Medication",
+    "questions": [
+      "What medication do I take today afternoon?",
+      "What are the medications I am taking?",
+      "Describe about the medication I am taking.",
+      "Do I have to take more medicines?"
+    ]
+  },
+  {
+    "heading": "Ask about General Health",
+    "questions": [
+      "What is Arthroscopy?",
+      "Tell me more about osteoarthritis",
+      "Which foods should I avoid if I have rheumatoid arthritis?"
+    ]
+  },
+  {
+    "heading": "This is for demo: To Sanjay sir",
+    "questions": ["one", "Two"]
+  }
+]

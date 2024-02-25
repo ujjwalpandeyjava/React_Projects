@@ -34,4 +34,12 @@ const useFetch = ({ url }) => {
 	return { data, isPending, isErrorState: isError };
 }
 
+function paraWithoutJSONs(anyName) {
+	return { anyName };
+}
+const paraWithoutJSON = (onePara) => {
+	return { onePara };
+}
+
 export default useFetch;
+export { paraWithoutJSON, paraWithoutJSONs };

@@ -1,0 +1,789 @@
+:root {
+    --chatResponseBorderRadius: 1em;
+    --chatBoxBorderRadius: 1.5em;
+    --chatBoxPadding: 0.3rem;
+    --chatDetailPadding: 0.5rem;
+    --questionActionButtonsSize: 2em;
+    --sironaCompanionTop: 0px;
+    --sironaCompanionRight: 10px;
+    --sironaCompanionHeight: 9em;
+    --sironaCompanionConfigHeight: 22em;
+}
+
+#companionContainer {
+    background-color: #ddd;
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgba(22, 22, 22, 0.7), rgba(22, 22, 22, 1)), url("../assets/images/stethoscope.jpg");
+    background-size: cover;
+    background-position: bottom;
+    font-family: "Montserrat", sans-serif;
+    overflow: auto;
+}
+
+.chatBoxContainer {
+    height: 100%;
+    border: none;
+    width: 100%;
+    font-size: 1rem;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.closeCompanionChatBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0.8rem;
+    font-size: 2rem;
+    height: 1.4em;
+    text-align: center;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+}
+
+.chatBox {
+    position: relative;
+    /* padding: var(--chatBoxPadding); */
+    height: 100%;
+    width: 100%;
+    color: hotpink;
+    overflow: auto;
+}
+
+#sironaAvatar {
+    /* height: 35%; */
+    height: 12rem;
+    background: black;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    position: fixed;
+    top: 15%;
+    left: 40%;
+    z-index: 10;
+    object-fit: cover;
+    border: 5px solid #fff;
+    transform: translate(-50%, -50%);
+    /* filter: brightness(0.9) drop-shadow(0px 0px 3px black); */
+    clip-path: circle(50%);
+    filter: drop-shadow(0px 0px 3px black);
+    cursor: grab;
+    transition: all 0.5s ease-out;
+}
+
+#sironaAvatar:active {
+    cursor: grabbing;
+}
+
+/* Section where user will do chat */
+.sectionChatResponse {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.chatResponseText,
+.chatResponseImportant {
+    position: relative;
+    flex: 1 1;
+    min-width: 200px;
+    min-height: 100%;
+    max-height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 0.3rem;
+    color: white;
+}
+
+.leftSideShowings {
+    font-size: 0.85rem;
+    height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.chatResponseText {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-origin: border-box;
+    background-size: contain;
+    background-blend-mode: color-dodge;
+    border-right: 2px solid gray;
+}
+
+#chatResponseTextText {
+    padding-right: 8px;
+    font-size: 0.7em;
+    min-height: 70%;
+    height: 100%;
+    padding: var(--chatDetailPadding);
+    overflow: auto;
+    position: relative;
+    background-color: rgba(94, 94, 94, 0.39);
+}
+
+#chatResponseTextText::-webkit-scrollbar,
+.leftSideShowings::-webkit-scrollbar {
+    display: none;
+}
+
+.timeTakenByAI {
+    text-align: right;
+    color: gray;
+    font-style: italic;
+    font-size: 10px;
+    padding: 0 var(--chatResponseBorderRadius);
+}
+
+.serverResponse {
+    background: lightgray;
+    /* margin-right: 30%; */
+    margin-right: auto;
+    filter: drop-shadow(0 0 2.5px #d9fd9d);
+    color: black;
+}
+
+.serverResponse .responseHead {
+    display: none !important;
+}
+
+.responseHead {
+    min-height: 1em;
+    gap: 1px;
+    display: flex;
+    flex-direction: row-reverse;
+    /* margin-inline: 5px -5px; */
+    align-items: center;
+}
+
+.responseHead i {
+    cursor: pointer;
+    /* background: #e3e3e3; */
+    padding: 3px 5px;
+    border-radius: 4px;
+    font-size: 1.3em;
+}
+
+.sectionChatQuestionConfig {
+    display: flex;
+}
+
+.sectionChatQuestionConfig>div {
+    /* flex: 1; */
+    color: white;
+    min-width: 50%;
+}
+
+.sectionChatQuestion {
+    /* background-color: red; */
+    /* padding-inline: calc(var(--chatDetailPadding) * 2); */
+    padding: calc(var(--chatDetailPadding) * 1) calc(var(--chatDetailPadding) * 0.5);
+    /* border: 1px solid blue; */
+    border-radius: var(--chatResponseBorderRadius);
+    margin-top: var(--chatDetailPadding);
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    filter: drop-shadow(0 1px 4px rgb(17, 17, 102));
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    gap: 3px;
+}
+
+.sectionChatQuestion .chatQuestionText::placeholder {
+    color: white;
+}
+
+.sectionChatQuestion .chatQuestionText {
+    width: 100%;
+    background: transparent;
+    border-radius: var(--chatResponseBorderRadius);
+    resize: vertical;
+    border: 1px solid white;
+    padding: 0.8em 0.5em;
+    color: white;
+    cursor: auto;
+    min-height: 3rem;
+    min-height: 4rem;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.chatQuestionTextActions {
+    width: calc(var(--questionActionButtonsSize) * 2.4);
+    display: flex;
+    margin-block: 0.25em;
+    color: black;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+}
+
+.chatQuestionTextActions>button {
+    all: unset;
+    /* border: 1px dotted orange; */
+    display: grid;
+    place-items: center;
+}
+
+.chatActionButtons {
+    background-color: rgb(230, 230, 230);
+    padding: 4px;
+    font-size: var(--questionActionButtonsSize);
+    overflow: visible;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 100ms ease-in-out;
+    color: black;
+    background-color: rgb(211, 212, 211);
+}
+
+.chatActionButtons:hover {
+    scale: 1.1;
+}
+
+.micListeningTrue,
+.micListeningFalse {
+    background-color: #a8bee6;
+}
+
+.micListeningTrue {
+    animation: micOnAnimation 2s ease infinite;
+}
+
+.micListeningFalse {
+    background-color: #a8bee6;
+}
+
+@keyframes micOnAnimation {
+
+    0%,
+    100% {
+        box-shadow: none;
+        scale: 1;
+    }
+
+    50% {
+        box-shadow: 0 0 0 2px #3a6cca, 0 0 0 5px #5b84cf, 0 0 0 6px #a8bee6;
+        scale: 1.15;
+    }
+}
+
+#sironaAvatar:hover {
+    border-color: #42ffde;
+    transition: all 250ms ease;
+    box-shadow: 0 0 7px 1px #42ffde;
+}
+
+td,
+th {
+    padding: 1px;
+}
+
+.text {
+    color: white;
+    padding: 5px;
+}
+
+#msgOnHScreen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: white;
+    pointer-events: none;
+    user-select: none;
+}
+
+#msgOnHScreen img {
+    max-height: 80px;
+    max-width: 80%;
+    margin-left: 0.25em;
+}
+
+#msgOnHScreen>div {
+    font-size: 4em;
+
+}
+
+#msgOnHScreen #tagLine {
+    color: lightgrey;
+    font-weight: normal;
+}
+
+/* Drag and drop */
+.droppableArea {
+    min-height: 100dvh;
+    /* border: 1px dashed black; */
+}
+
+/* Utility */
+.cursorPointer {
+    cursor: pointer;
+}
+
+/* Loader */
+/*.waitingForResp {
+	position: relative;
+	width: 80px;
+	height: 33px;
+	margin-top: 1em;
+	margin-inline: auto;
+}
+.waitingForResp-text {
+	position: absolute;
+	top: 0;
+	padding: 0;
+	margin: 0;
+	color: #c8b6ff;
+	animation: text_713 3.5s ease both infinite;
+	font-size: 0.8rem;
+	letter-spacing: 1px;
+}
+.load {
+	background-color: #9a79ff;
+	border-radius: 50px;
+	display: block;
+	height: 16px;
+	width: 16px;
+	bottom: 0;
+	position: absolute;
+	transform: translateX(64px);
+	animation: loading_713 3.5s ease both infinite;
+}
+.load::before {
+	position: absolute;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: #d1c2ff;
+	border-radius: inherit;
+	animation: loading2_713 3.5s ease both infinite;
+}
+@keyframes text_713 {
+	0% {
+		letter-spacing: 1px;
+		transform: translateX(0px);
+	}
+	40% {
+		letter-spacing: 2px;
+		transform: translateX(26px);
+	}
+	80% {
+		letter-spacing: 1px;
+		transform: translateX(32px);
+	}
+	90% {
+		letter-spacing: 2px;
+		transform: translateX(0px);
+	}
+	100% {
+		letter-spacing: 1px;
+		transform: translateX(0px);
+	}}
+@keyframes loading_713 {
+	0% {
+		width: 16px;
+		transform: translateX(0px);
+	}
+	40% {
+		width: 100%;
+		transform: translateX(0px);
+	}
+	80% {
+		width: 16px;
+		transform: translateX(64px);
+	}
+	90% {
+		width: 100%;
+		transform: translateX(0px);
+	}
+	100% {
+		width: 16px;
+		transform: translateX(0px);
+	}}
+@keyframes loading2_713 {
+	0% {
+		transform: translateX(0px);
+		width: 16px;
+	}
+	40% {
+		transform: translateX(0%);
+		width: 80%;
+	}
+	80% {
+		width: 100%;
+		transform: translateX(0px);
+	}
+	90% {
+		width: 80%;
+		transform: translateX(15px);
+	}
+	100% {
+		transform: translateX(0px);
+		width: 16px;
+	}}*/
+.loader {
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    color: #fff;
+    margin: 1em auto;
+    display: block;
+}
+
+.loader:before,
+.loader:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    border: 1.5px dashed;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transform: rotateX(70deg);
+    animation: 1s spin linear infinite;
+}
+
+.loader:after {
+    color: #ff3d00;
+    transform: rotateY(70deg);
+    animation-delay: 0.4s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+}
+
+@keyframes rotateccw {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes spin {
+
+    0%,
+    100% {
+        box-shadow: 0.2em 0px 0 0px currentcolor;
+    }
+
+    12% {
+        box-shadow: 0.2em 0.2em 0 0 currentcolor;
+    }
+
+    25% {
+        box-shadow: 0 0.2em 0 0px currentcolor;
+    }
+
+    37% {
+        box-shadow: -0.2em 0.2em 0 0 currentcolor;
+    }
+
+    50% {
+        box-shadow: -0.2em 0 0 0 currentcolor;
+    }
+
+    62% {
+        box-shadow: -0.2em -0.2em 0 0 currentcolor;
+    }
+
+    75% {
+        box-shadow: 0px -0.2em 0 0 currentcolor;
+    }
+
+    87% {
+        box-shadow: 0.2em -0.2em 0 0 currentcolor;
+    }
+}
+
+.vertical-line {
+    position: relative;
+}
+
+.vertical-line::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 50vh;
+    /* Height of the line */
+    border-left: 5px solid white;
+    /* Color and thickness of the line */
+}
+
+.loader1 {
+    display: inline-block;
+    font-size: 0px;
+    padding: 0px;
+    position: relative;
+    z-index: 4 !important;
+}
+
+.loader1 span {
+    vertical-align: middle;
+    border-radius: 100%;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 3px 2px;
+    animation: loader1 0.8s linear infinite alternate;
+}
+
+.loader1 span:nth-child(1) {
+    animation-delay: -1s;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.loader1 span:nth-child(2) {
+    animation-delay: -0.8s;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.loader1 span:nth-child(3) {
+    animation-delay: -0.26666s;
+    background: rgba(255, 255, 255, 1);
+}
+
+.loader1 span:nth-child(4) {
+    animation-delay: -0.8s;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.loader1 span:nth-child(5) {
+    animation-delay: -1s;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes loader1 {
+    from {
+        transform: scale(0, 0);
+    }
+
+    to {
+        transform: scale(1, 1);
+    }
+}
+
+tbody {
+    width: 49%;
+    border-bottom: 1px solid #ccc;
+}
+
+td {
+    text-align: left;
+    /* border-bottom: 1px solid #ccc; */
+    /* padding-left: 20%; */
+}
+
+.disable {
+    pointer-events: none;
+}
+
+.disableStateIndication {
+    background-color: gray;
+    opacity: 0.5;
+}
+
+#fullChatEffectingActions {
+    display: flex;
+    padding: 0px 10px 5px 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#fullChatEffectingActions>button {
+    margin: 0 2px;
+    border-radius: 6px;
+    background-color: rgb(203, 203, 203);
+    padding: 4px 7px;
+    cursor: pointer;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2px;
+    font-weight: bolder;
+}
+
+#fullChatEffectingActions svg {
+    font-size: 1.3em;
+}
+
+#fullChatEffectingActions>#examplesBtn {
+    display: none;
+    position: absolute;
+    background: #fff;
+    padding: 1%;
+    width: fit-content;
+    z-index: 4;
+}
+
+.serverResponse :is(td, tr) {
+    border-left: 3px double skyblue;
+}
+
+.showExmple {
+    /* position: fixed; */
+    transition: all 0.5s ease-out;
+    /* background: #161616; */
+    left: 0 !important;
+    top: 0 !important;
+    z-index: 1 !important;
+    height: 100% !important;
+}
+
+#backBtn {
+    display: none;
+}
+
+/* Responsiveness */
+@media only screen and (min-width: 1030px) and (max-width: 1366px) {
+
+
+    #mapleLogo {
+        height: 3.5rem !important;
+    }
+
+    #sironaAvatar {
+        height: 30% !important;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1030px) {
+
+    #mapleLogo {
+        height: 3.3rem !important;
+    }
+
+    .sectionChatQuestion .chatQuestionText {
+        width: 70% !important;
+    }
+
+    #sironaAvatar {
+        height: 28% !important;
+    }
+
+    @media only screen and (min-device-width: 100px) and (max-device-width: 768px) {
+        .sectionChatResponse {
+            flex-direction: column;
+            flex-wrap: nowrap !important;
+        }
+
+        .chatResponseImportant {
+            position: fixed;
+            left: 100%;
+            transition: all 0.5s ease-out;
+            background: #161616;
+            width: 100% !important;
+        }
+
+        #sironaAvatar {
+            top: 30%;
+            filter: drop-shadow(0px 0px 3px black) brightness(0.9);
+            z-index: 0;
+        }
+
+
+        #mapleLogo {
+            height: 4rem !important;
+        }
+
+        #fullChatEffectingActions>#examplesBtn {
+            display: block;
+        }
+
+        #fullChatEffectingActions>#examplesBtn:active {
+            transform: scale(0.9);
+        }
+
+        #backBtn {
+            position: absolute;
+            top: 2%;
+            left: 2%;
+        }
+
+        .showExmple {
+            z-index: 5 !important;
+        }
+
+        #seeExp {
+            display: inline !important;
+            text-decoration: underline !important;
+        }
+    }
+
+    .contentToReadLoud::-webkit-scrollbar {
+        background: #b8b8b8;
+        height: 5px;
+        border-radius: 6px;
+    }
+
+    .contentToReadLoud::-webkit-scrollbar-thumb {
+        background: #848484;
+        border-radius: 6px;
+    }
+
+}
+
+/* Utility */
+.displayNone {
+    display: none;
+}
+
+.displayFlex {
+    display: flex;
+}
+
+.displayBlock {
+    display: block;
+}
+
+.displayInline {
+    display: inline;
+}
+
+.fullScreen {
+    height: 100vh;
+    width: 100vw;
+}

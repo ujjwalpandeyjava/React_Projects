@@ -1,0 +1,42 @@
+.home {
+	padding: 3px;
+}
+
+.navbar {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 0.6em;
+}
+
+.notAuthenticated {
+	background-color: #e49a146b;
+	border: 1px solid black;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-between;
+	padding: 3px 5px;
+}
+
+.closeButton {
+	font-size: small;
+	width: 1.6rem;
+	aspect-ratio: 1/1;
+	display: inline-grid;
+	place-items: center;
+	background-color: #f75050;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 50%;
+	border: 1px dashed slategray;
+}
+
+.closeButton:hover {
+	background-color: #f74545;
+	box-shadow: 0 0 5px #f26969;
+}

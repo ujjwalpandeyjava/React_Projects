@@ -1,0 +1,23 @@
+.errorResponse {
+    padding: 0.5em 0.6em 0.5em 0.6em;
+    border-radius: var(--chatResponseBorderRadius);
+    max-width: 90%;
+    font-size: 1.09em;
+    filter: drop-shadow(0 0 2.5px #161616);
+    color: black;
+    background-color: #ffefcc;
+    margin: auto;
+}
+
+.error {}
+
+.oneNewSectionForHeadAndRead {
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    justify-content: flex-end;
+}
+
+.contentToReadLoud {}
+
+.responseHead {}

@@ -1,0 +1,72 @@
+.pulseLoader {
+    font-size: 3em;
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.pulseLoader>* {
+    margin: auto;
+}
+
+
+
+.loader1 {
+    text-align: center;
+    display: inline-block;
+    font-size: 0px;
+    padding: 0px;
+    position: relative;
+    z-index: 4 !important;
+
+    display: block;
+}
+
+
+.loader1 span {
+    vertical-align: middle;
+    border-radius: 100%;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 3px 2px;
+    animation: loader1 0.8s linear infinite alternate;
+}
+
+.loader1 span:nth-child(1) {
+    animation-delay: -1s;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.loader1 span:nth-child(2) {
+    animation-delay: -0.8s;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.loader1 span:nth-child(3) {
+    animation-delay: -0.26666s;
+    background: rgba(255, 255, 255, 1);
+}
+
+.loader1 span:nth-child(4) {
+    animation-delay: -0.8s;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.loader1 span:nth-child(5) {
+    animation-delay: -1s;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes loader1 {
+    from {
+        transform: scale(0, 0);
+    }
+
+    to {
+        transform: scale(1, 1);
+    }
+}

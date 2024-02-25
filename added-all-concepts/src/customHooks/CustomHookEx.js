@@ -1,8 +1,11 @@
 import { Fragment } from "react";
-import useFetch from "./useFetch";
+import useFetch, { paraWithoutJSON, paraWithoutJSONs } from "./useFetch";
 
 function CustomHookEx() {
 	const { data: slideImages, isPending, isErrorState } = useFetch({ url: "https://picsum.photos/v2/list?page=1&limit=10" });
+	const allReturn = paraWithoutJSON("The values");
+	const allReturn2 = paraWithoutJSONs("The values 2");
+	console.log("allReturn:", allReturn, allReturn2);
 	return (
 		<Fragment>
 			<h1>CustomHookEx</h1>

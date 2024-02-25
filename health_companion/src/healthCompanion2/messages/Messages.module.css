@@ -1,0 +1,19 @@
+.serverResponseCont,
+.askedQuestionCont,
+.errorCont {
+    display: flex;
+    margin-top: 1em;
+}
+
+.serverResponseCont {
+    display: flex;
+}
+
+.askedQuestionCont {
+    display: flex;
+}
+
+
+.errorCont {
+    display: flex;
+}

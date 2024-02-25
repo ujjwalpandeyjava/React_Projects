@@ -57,3 +57,9 @@ root.render(
   <RouterProvider router={routesWithJSX} />
 );
 
+
+// OR
+function indexJSX() {
+  return <RouterProvider router={routesWithJSX} />
+}
+export { indexJSX };

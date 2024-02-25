@@ -1,0 +1,14 @@
+.spinInfinite {
+	transform: rotate(90deg);
+	animation: spinInfinite 1s infinite linear;
+}
+
+@keyframes spinInfinite {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
