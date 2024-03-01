@@ -42,7 +42,8 @@ function App() {
     { empID: 1004, empName: 'Ujjwal 4', empLastName: 'pandey', empDesignation: 'Fixer', salary: 20000 },
     { empID: 1005, empName: 'Ujjwal 5', empLastName: 'pandey', empDesignation: 'IT', salary: 22000 },
     { empID: 1006, empName: 'Ujjwal 6', empLastName: 'pandey', empDesignation: 'IOT', salary: 45000 },
-    { empID: 1007, empName: 'Ujjwal 7', empLastName: 'pandey', empDesignation: 'MAnager', salary: 30000 }]
+    { empID: 1007, empName: 'Ujjwal 7', empLastName: 'pandey', empDesignation: 'MAnager', salary: 30000 }
+  ]
 
 
   /*
