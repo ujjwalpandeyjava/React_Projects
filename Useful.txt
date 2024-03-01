@@ -1,3 +1,12 @@
+/*
+ * Run: npm run start
+ *    : npx nodemon ./server.js
+ * Hot Reload run: "npx nodemon ./server.js"
+ */
+
+ 
+
+
 >> Sever/host: 
 	https://create-react-app.dev/docs/deployment/#serving-apps-with-client-side-routing
 
